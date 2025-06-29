@@ -18,7 +18,7 @@
 
       <!-- Inputs Container -->
      <div class="form-container bg-[#334155] rounded-lg w-full overflow-hidden">
-        <input type="text" placeholder="Full Name"
+        <input type="text" placeholder="Username"
           class="input  w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-violet-400"/></div>
           <div class="form-container bg-[#334155] rounded-lg w-full overflow-hidden">
         <input type="email" placeholder="Email"
@@ -41,12 +41,24 @@
                     </label>
                 </div>
 
-                <!-- Continue with Google button -->
-                <button type="button"
-                    class="flex items-center justify-center mb-2 gap-2 border border-gray-700 rounded-xl py-3 text-gray-300 font-semibold hover:bg-violet-800 transition-colors">
-                    <i class='bx bxl-google text-xl'></i>
-                    Continue with Google
-                </button>
+             <button type="button"
+  class="flex items-center justify-center mb-2 gap-2 border border-gray-700 rounded-xl py-3 text-gray-300 font-semibold hover:bg-violet-800 transition-colors">
+   
+                   <!-- White Google Logo (override fill) -->
+                <svg class="w-5 h-5" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="white" d="M533.5 278.4c0-17.3-1.4-34.1-4.1-50.4H272v95.3h146.9c-6.3 33.5-25 61.8-53.4 80.9v67h86.3c50.6-46.6 81.7-115.4 81.7-192.8z" />
+                    <path fill="white" d="M272 544.3c72.8 0 133.8-24.1 178.4-65.5l-86.3-67c-24.1 16.2-55 25.6-92.1 25.6-70.7 0-130.7-47.7-152.1-111.6h-90.2v69.9c44.9 88.4 137.1 148.6 242.3 148.6z" />
+                    <path fill="white" d="M119.9 325.8c-10.4-30.9-10.4-64.2 0-95.1v-69.9h-90.2c-30.4 59.6-30.4 130.4 0 190z" />
+                    <path fill="white" d="M272 107.7c39.6 0 75.2 13.6 103.1 40.4l77.1-77.1c-48.8-45.3-112.4-70.9-180.2-70.9-105.1 0-197.4 60.2-242.3 148.6l90.2 69.9c21.4-63.9 81.4-111.6 152.1-111.6z" />
+                </svg>
+
+  <!-- Button Text -->
+  Continue with Google
+</button>
+
+
+  
+
 
       <!-- Submit Button -->
       <button type="submit"
