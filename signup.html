@@ -10,7 +10,7 @@
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
 
-  <div class="form-box max-w-[300px] bg-[#f1f7fe] text-[#010101] rounded-2xl overflow-hidden">
+  <div class="form-box max-w-[300px] bg-[#e0ecfb] shadow-lg mr text-[#010101] rounded-2xl overflow-hidden">
     <form class="form flex flex-col gap-4 text-center px-6 py-8 relative">
       <!-- Title & Subtitle -->
       <span class="title font-bold text-[1.6rem]">Sign up</span>
@@ -18,17 +18,18 @@
 
       <!-- Inputs Container -->
       <div class="form-container bg-white rounded-lg w-full my-4 overflow-hidden">
-        <input type="text" placeholder="Full Name" class="input w-full h-10 border-b border-[#eee] px-4 py-2 text-sm focus:outline-none"/>
+        <input type="text" placeholder="Username" class="input w-full h-10 border-b border-[#eee] px-4 py-2 text-sm focus:outline-none"/>
         <input type="email" placeholder="Email" class="input w-full h-10 border-b border-[#eee] px-4 py-2 text-sm focus:outline-none"/>
         <input type="password" placeholder="Password" class="input w-full h-10 border-b border-[#eee] px-4 py-2 text-sm focus:outline-none"/>
+        <input type="confirm password" placeholder="Confirm Password" class="input w-full h-10 border-b border-[#eee] px-4 py-2 text-sm focus:outline-none"/>
       </div>
 
       <!-- Button -->
       <button type="submit"
-        class="bg-[#0066ff] text-white font-semibold text-base py-2.5 px-4 rounded-full transition duration-300 hover:bg-[#005ce6]">
-        Sign up
-      </button>
-    </form>
+       class="bg-[#0066ff] text-white font-semibold text-base py-2.5 px-4 rounded-full transition duration-300 
+            hover:bg-[#005ce6] shadow-[0_4px_15px_rgba(0,0,0,0.4)]"> Sign up
+        </button>
+
 
     <!-- Bottom Section -->
     <div class="form-section bg-[#e0ecfb] text-sm px-4 py-4 text-center shadow-[0_-1px_0_0_rgba(0,0,0,0.08)]">
