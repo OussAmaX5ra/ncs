@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyMate Calendar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans min-h-screen p-6">
+  <div class="max-w-md mx-auto bg-white border border-violet-200 rounded-xl shadow-lg p-6">
+    <div class="flex justify-between items-center mb-4">
+      <button id="prev" class="text-violet-600 hover:text-violet-800">&larr;</button>
+      <h2 id="monthYear" class="text-xl font-semibold text-violet-700"></h2>
+      <button id="next" class="text-violet-600 hover:text-violet-800">&rarr;</button>
+    </div>
+
+    <div class="grid grid-cols-7 text-center text-sm font-medium text-gray-500 mb-2">
+      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+
+    <div id="calendarDays" class="grid grid-cols-7 text-center gap-y-2 text-gray-700">
+      <!-- JS will populate this -->
+    </div>
+  </div>
+
+  <script>
+    const monthYearEl = document.getElementById("monthYear");
+    const calendarDays = document.getElementById("calendarDays");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+
+    let date = new Date();
+
+    function renderCalendar() {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const firstDay = new Date(year, month, 1).getDay();
+      const lastDate = new Date(year, month + 1, 0).getDate();
+      const today = new Date();
+
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      monthYearEl.textContent = `${monthNames[month]} ${year}`;
+
+      calendarDays.innerHTML = "";
+
+      for (let i = 0; i < firstDay; i++) {
+        calendarDays.innerHTML += `<div></div>`;
+      }
+
+      for (let d = 1; d <= lastDate; d++) {
+        const isToday =
+          d === today.getDate() &&
+          month === today.getMonth() &&
+          year === today.getFullYear();
+
+        calendarDays.innerHTML += `
+          <div class="rounded-full w-10 h-10 flex items-center justify-center mx-auto
+            ${isToday ? "bg-violet-500 text-white font-semibold" : "hover:bg-violet-100"} 
+            cursor-pointer transition">
+            ${d}
+          </div>`;
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      date.setMonth(date.getMonth() - 1);
+      renderCalendar();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      date.setMonth(date.getMonth() + 1);
+      renderCalendar();
+    });
+
+    renderCalendar();
+  </script>
+</body>
+</html>
