@@ -13,12 +13,17 @@
  <header class="bg-white py-6  relative">
   <div class="w-full relative flex items-center justify-center px-6">
 
-    <!-- Left-aligned Dashboard -->
-    <a href="dashboard.html"
-   class="bg-white hover:bg-gray-200 absolute font-semibold left-4 px-3 py-1 text-black  border-gray-300 rounded text-sm">
-  ← Dashboard
-</a>
 
+    <a href="dashboard.html"
+   class="bg-white hover:bg-gray-200 font-semibold absolute left-4 px-3 py-1 text-black border-gray-300 rounded text-sm flex items-center gap-2">
+  <!-- SVG Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+       stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+  </svg>
+  Dashboard
+</a>
     <!-- Centered Title -->
     <h1 class="text-2xl font-bold text-black text-center">
       Code With Me
@@ -26,8 +31,8 @@
 
     <!-- Right-side Controls -->
     <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md">
-      <a href="settings.html" class="to-black hover:text-gray-700">Settings</a>
-      <a href="profile.html" class="text-black hover:text-gray-700">Profile</a>
+      <a href="settings.html" class="to-black hover:text-gray-700 font-semibold ">Settings</a>
+      <a href="profile.html" class="text-black hover:text-gray-700 font-semibold">Profile</a>
       <a href="logout.html" class="bg-violet-500 hover:bg-violet-600 text-white px-3 py-1 rounded-full transition">
         Log out
       </a>

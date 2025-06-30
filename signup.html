@@ -9,7 +9,18 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-white text-white">
+<body class="flex items-center flex-col justify-center min-h-screen bg-white text-white">
+  <main class="flex-grow flex items-center justify-center">
+ <a href="dashboard.html"
+   class="bg-white hover:bg-gray-200 text-md font-semibold absolute top-4 left-4 px-3 py-1 text-black border-gray-300 rounded  flex items-center gap-2">
+  <!-- SVG Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+       stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+  </svg>
+ Go Home
+</a>
 
   <div class="form-box max-w-[320px] bg-gray-100 text-white border rounded-2xl shadow-lg overflow-hidden">
     <form class="form flex flex-col gap-4 text-center px-6 py-4 relative ">
@@ -55,7 +66,7 @@
       </button>
        <button type="button"
   class="flex items-center justify-center mb-2 gap-2 border border-gray-700 rounded-full py-3 text-gray-600 font-semibold
-   hover:bg-violet-500 transition-colors hover:text-black">
+   hover:bg-violet-500 transition-colors hover:text-white">
    
               <!-- Colored Google Logo -->
 <svg class="w-5 h-5" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +90,11 @@
         </a>
       </p>
     </div>
-  </div>
-
+  </div> 
+</main>
+    <!-- Footer -->
+  <footer class="bg-white text-center text-sm text-gray-500 py-6 mt-8">
+    © 2025 StudyMate AI. All rights reserved.
+  </footer>
 </body>
 </html>
