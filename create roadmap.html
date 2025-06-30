@@ -1,0 +1,101 @@
+<!-- Roadmap Creator Page (with StudyMate theme) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Your Learning Roadmap | StudyMate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] text-white font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-[#1e293b] py-6 shadow-lg relative">
+  <div class="w-full relative flex items-center justify-center px-6">
+
+    <!-- Left-aligned Dashboard -->
+    <a href="dashboard.html"
+       class="absolute left-0 pl-10 text-violet-400 hover:text-violet-300 text-md">
+      ← Dashboard
+    </a>
+
+    <!-- Centered Title -->
+    <h1 class="text-2xl font-bold text-violet-400 text-center">
+      Roadmap Inventor
+    </h1>
+
+    <!-- Right-side Controls -->
+    <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md">
+      <a href="settings.html" class="text-violet-400 hover:text-violet-300">Settings</a>
+      <a href="profile.html" class="text-violet-400 hover:text-violet-300">Profile</a>
+      <a href="logout.html" class="bg-violet-500 hover:bg-violet-600 text-white px-3 py-1 rounded-full transition">
+        Log out
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+
+  <!-- Main Content -->
+  <section class="px-4 py-16 max-w-2xl mx-auto text-center">
+    <div class="mb-6">
+      <div class="bg-violet-500 w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white text-xl">✈️</div>
+      <h2 class="text-3xl font-bold mt-4 text-violet-300">Create Your Learning Roadmap</h2>
+      <p class="text-gray-300 mt-2">Tell us what you want to learn, and our AI will create a personalized, step-by-step learning path with visual progress tracking.</p>
+    </div>
+
+    <form class="bg-[#1e293b] p-8 rounded-xl shadow-md space-y-5 text-left">
+      <h3 class="text-xl font-semibold text-violet-400">What do you want to learn?</h3>
+      <p class="text-sm text-gray-400">Be specific about your learning goals. For example: "Python for data science", "React development for beginners", or "Machine learning fundamentals"</p>
+
+      <!-- Learning Topic -->
+      <div>
+        <label class="block mb-1 text-sm font-medium text-gray-300">Learning Topic</label>
+        <input type="text" placeholder="e.g., Python for Data Science" class="w-full px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-500" />
+      </div>
+
+      <!-- Experience Level -->
+      <div>
+        <label class="block mb-1 text-sm font-medium text-gray-300">Current Experience Level</label>
+        <select class="w-full px-4 py-2 rounded-md bg-gray-800 text-white">
+          <option>Complete Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+
+      <!-- Specific Goals -->
+      <div>
+        <label class="block mb-1 text-sm font-medium text-gray-300">Specific Goals (Optional)</label>
+        <textarea placeholder="What do you want to achieve? Any specific projects or applications in mind?" class="w-full px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-500"></textarea>
+      </div>
+
+      <!-- Timeline -->
+      <div>
+        <label class="block mb-1 text-sm font-medium text-gray-300">Preferred Timeline</label>
+        <select class="w-full px-4 py-2 rounded-md bg-gray-800 text-white">
+          <option>Flexible (Learn at my own pace)</option>
+          <option>1 Month</option>
+          <option>3 Months</option>
+          <option>6 Months</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-4">
+        <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-violet-500 py-3 rounded-full font-semibold text-white hover:opacity-90 transition">
+          🚀 Generate AI Roadmap
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1e293b] text-center text-sm text-gray-500 py-6 mt-8">
+    © 2025 StudyMate AI. All rights reserved.
+  </footer>
+
+</body>
+</html>
