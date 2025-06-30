@@ -6,32 +6,35 @@
   <title>StudyMate AI</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] text-white font-sans">
+<body class="bg-white text-black font-sans">
 
-  <header class="bg-[#1e293b] py-6 shadow-lg">
+  <header class="bg-white py-6 shadow-lg">
     <div class="max-w-6xl mx-auto  flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-violet-400">StudyMate </h1>
+      <h1 class="text-2xl font-bold text-black">StudyMate</h1>
       <nav class="space-x-4 text-sm">
-        <a href="#features" class="hover:text-violet-300">Features</a>
-        <a href="#solution" class="hover:text-violet-300">Solution</a>
-        <a href="#audience" class="hover:text-violet-300">Who It’s For</a>
+        <a href="#features" class="">Features</a>
+        <a href="#solution" class="">Solution</a>
+        <a href="#audience" class="">Who It’s For</a>
         <a href="login.html" class="bg-violet-500 text-white px-4 py-2 rounded-full hover:bg-violet-600 transition">Login</a>
       </nav>
     </div>
   </header>
 
   <section class="text-center px-6 py-16 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4 text-violet-400">Learn Smarter. Plan Better. Study with AI.</h2>
-    <p class="text-gray-300 mb-6">Your intelligent study partner that explains, organizes, and plans your learning — all in one place.</p>
+    <h2 class="text-3xl font-bold mb-4 text-black">Learn Smarter. Plan Better. Study with AI.</h2>
+    <p class="text-gray-600 mb-6">Your intelligent study partner that explains, organizes, and plans your learning — all in one place.</p>
     <a href="signup.html" class="inline-block bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 rounded-full font-semibold text-white hover:opacity-90 transition">Get Started Free</a>
   </section>
 
   <section id="problem" class="py-12 px-6">
     <div class="max-w-4xl mx-auto">
-      <h3 class="text-2xl font-semibold text-violet-400 mb-4">🧩 Problem</h3>
-      <p class="text-gray-300 leading-relaxed">
+      <h3 class="text-2xl font-semibold text-black mb-4 flex items-center gap-2">
+        <svg class="w-6 h-6 text-violet-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 4.1 5.6 11.3 6.3 12.2.4.5 1.1.5 1.5 0C13.4 20.3 19 13.1 19 9c0-3.87-3.13-7-7-7z"/></svg>
+         Problem
+      </h3>
+      <p class="text-gray-600 leading-relaxed">
         Self-learning is powerful, but hard to manage. <br/>
-        What should I study next? How do I stay consistent? Who helps when I’m stuck?
+        What should I study next? How do I stay consistent? Who helps when I’m stuck? <br/>
         Most tools focus only on planning or notes. Learners need more — one tool for everything.
       </p>
     </div>
@@ -39,9 +42,12 @@
 
   <section id="solution" class="py-12 px-6">
     <div class="max-w-4xl mx-auto">
-      <h3 class="text-2xl font-semibold text-violet-400 mb-4">💡 Solution</h3>
-      <p class="text-gray-300 leading-relaxed">
-        StudyMate AI organizes your learning, explains concepts, and keeps you on track.
+      <h3 class="text-2xl font-semibold text-black mb-4 flex items-center gap-2">
+        <svg class="w-6 h-6 text-violet-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9 21h6v-1H9v1zm3-20C6.48 1 2 5.48 2 11c0 3.84 2.91 7.08 6.74 7.87.1-.34.26-.66.46-.94C6.4 16.38 4 13.94 4 11c0-4.42 3.58-8 8-8s8 3.58 8 8c0 2.94-2.4 5.38-5.2 6.93.2.28.36.6.46.94C19.09 18.08 22 14.84 22 11c0-5.52-4.48-10-10-10z"/></svg>
+         Solution
+      </h3>
+      <p class="text-gray-600 leading-relaxed">
+        StudyMate AI organizes your learning, explains concepts, and keeps you on track. <br/>
         From code to PDFs, we give you clarity and a structured plan.
       </p>
     </div>
@@ -49,29 +55,62 @@
 
   <section id="features" class="py-12 px-6">
     <div class="max-w-4xl mx-auto">
-      <h3 class="text-2xl font-semibold text-violet-400 mb-6">🚀 Key Features</h3>
-      <ul class="space-y-4 text-gray-300">
-        <li>🗺️ <strong>Roadmap Inventor:</strong> Build a visual, step-by-step path for anything you want to learn.</li>
-        <li>💻 <strong>Code With Me:</strong> Paste code to get explanations, fixes, and smarter alternatives.</li>
-        <li>📚 <strong>PDF & Word Summarizer:</strong> Upload docs and get summaries, highlights, or flashcards.</li>
-        <li>🗓️ <strong>AI Planner:</strong> Auto-schedules your study sessions and sends reminders.</li>
+      <h3 class="text-2xl font-semibold text-black mb-6 flex items-center gap-2">
+        <svg class="w-6 h-6 text-violet-500" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5h18v2H3zm0 6h18v2H3zm0 6h18v2H3z"/></svg>
+         Key Features
+      </h3>
+      <ul class="space-y-4 text-gray-600">
+        <li class="flex items-start gap-2">
+          <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+          <span><strong>Roadmap Inventor:</strong> Build a visual, step-by-step path for anything you want to learn.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+          <span><strong>Code With Me:</strong> Paste code to get explanations, fixes, and smarter alternatives.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+          <span><strong>PDF & Word Summarizer:</strong> Upload docs and get summaries, highlights, or flashcards.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+          <span><strong>AI Planner:</strong> Auto-schedules your study sessions and sends reminders.</span>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section id="audience" class="py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-2xl font-semibold text-violet-400 mb-4">👤 Who It’s For</h3>
-      <p class="text-gray-300">
-        • Students (high school, university, bootcamp) <br/>
-        • Developers learning new languages <br/>
-        • Professionals prepping for certifications <br/>
-        • Self-taught learners & autodidacts
-      </p>
-    </div>
-  </section>
+ <section id="audience" class="py-12 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h3 class="text-2xl font-semibold text-black mb-6 flex items-center gap-2">
+      <svg class="w-6 h-6 text-violet-500" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+      Who It’s For
+    </h3>
+    <ul class="space-y-4 text-gray-600">
+      <li class="flex items-start gap-2">
+        <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+        <span>Students (high school, university, bootcamp)</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+        <span>Developers learning new languages</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+        <span>Professionals prepping for certifications</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="w-2 h-2 mt-2 rounded-full bg-violet-500"></span>
+        <span>Self-taught learners & autodidacts</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <footer class="bg-[#1e293b] text-center text-sm text-gray-500 py-6 mt-8">
+
+  <footer class="bg-white text-center text-sm text-gray-500 py-6 mt-8">
     © 2025 StudyMate AI. All rights reserved.
   </footer>
 

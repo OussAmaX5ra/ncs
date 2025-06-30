@@ -7,27 +7,27 @@
   <title>Code With Me | StudyMate</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] text-white font-sans min-h-screen">
+<body class="bg-white text-black font-sans min-h-screen">
 
   <!-- Header -->
- <header class="bg-[#1e293b] py-6 shadow-lg relative">
+ <header class="bg-white py-6 shadow-lg relative">
   <div class="w-full relative flex items-center justify-center px-6">
 
     <!-- Left-aligned Dashboard -->
     <a href="dashboard.html"
-       class="absolute left-0 pl-10 text-violet-400 hover:text-violet-300 text-md">
+       class="absolute left-0 pl-10 text-black hover:text-gray-700 text-md">
       ← Dashboard
     </a>
 
     <!-- Centered Title -->
-    <h1 class="text-2xl font-bold text-violet-400 text-center">
+    <h1 class="text-2xl font-bold text-black text-center">
       Code With Me
     </h1>
 
     <!-- Right-side Controls -->
     <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md">
-      <a href="settings.html" class="text-violet-400 hover:text-violet-300">Settings</a>
-      <a href="profile.html" class="text-violet-400 hover:text-violet-300">Profile</a>
+      <a href="settings.html" class="to-black hover:text-gray-700">Settings</a>
+      <a href="profile.html" class="text-black hover:text-gray-700">Profile</a>
       <a href="logout.html" class="bg-violet-500 hover:bg-violet-600 text-white px-3 py-1 rounded-full transition">
         Log out
       </a>
@@ -39,19 +39,20 @@
   <!-- Content -->
   <section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
     <!-- Paste Code Section -->
-    <div class="bg-[#1e293b] rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold text-violet-300 mb-2">Paste Your Code</h2>
-      <p class="text-sm text-gray-400 mb-4">Support for JavaScript, Python, React, and many other languages</p>
-      <textarea placeholder="Paste your code here..." class="w-full h-60 px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-500 mb-4"></textarea>
-      <div class="flex space-x-4">
+    <div class="bg-white rounded-xl shadow-lg p-6 border ">
+      <h2 class="text-xl font-semibold text-black mb-2">Paste Your Code</h2>
+      <p class="text-sm text-gray-600 font-medium mb-4">Support for JavaScript, Python, React, and many other languages</p>
+      <textarea placeholder="Paste your code here..." class="w-full h-60 px-4 py-3 rounded-md bg-white text-gray-800 border
+       placeholder-gray-500 mb-4"></textarea>
+      <div class="flex justify-between">
         <button class="px-4 py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition">Try Sample Code</button>
         <button class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white rounded-full hover:opacity-90 transition">⚡ Analyze Code</button>
       </div>
     </div>
 
     <!-- What You'll Get Section -->
-    <div class="bg-[#1e293b] rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold text-violet-300 mb-4">What You'll Get</h2>
+    <div class="bg-white rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-black mb-4">What You'll Get</h2>
       <ul class="space-y-4 text-gray-300">
         <li class="flex items-start space-x-3">
           <span class="text-blue-400 text-xl">🧠</span>
@@ -74,7 +75,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#1e293b] text-center text-sm text-gray-500 py-6 mt-8">
+  <footer class="bg-white text-center text-sm text-gray-500 py-6 mt-8">
     © 2025 StudyMate AI. All rights reserved.
   </footer>
 
