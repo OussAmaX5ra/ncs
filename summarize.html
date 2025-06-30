@@ -1,0 +1,96 @@
+<!-- Document Summarizer Page (with StudyMate theme) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Summarizer | StudyMate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] text-white font-sans min-h-screen">
+
+  <!-- Header -->
+   <header class="bg-[#1e293b] py-6 shadow-lg relative">
+  <div class="w-full relative flex items-center justify-center px-6">
+
+    <!-- Left-aligned Dashboard -->
+    <a href="dashboard.html"
+       class="absolute left-0 pl-10 text-violet-400 hover:text-violet-300 text-md">
+      ← Dashboard
+    </a>
+
+    <!-- Centered Title -->
+    <h1 class="text-2xl font-bold text-violet-400 text-center">
+      Document Summarizer
+    </h1>
+
+    <!-- Right-side Controls -->
+    <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md">
+      <a href="settings.html" class="text-violet-400 hover:text-violet-300">Settings</a>
+      <a href="profile.html" class="text-violet-400 hover:text-violet-300">Profile</a>
+      <a href="logout.html" class="bg-violet-500 hover:bg-violet-600 text-white px-3 py-1 rounded-full transition">
+        Log out
+      </a>
+    </div>
+
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <section class="px-4 py-16 max-w-4xl mx-auto text-center">
+    <div class="mb-10">
+      <div class="bg-violet-500 w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white text-xl">🧠</div>
+      <h2 class="text-3xl font-bold mt-4 text-violet-300">Summarize Smarter. Study Faster.</h2>
+      <p class="text-gray-300 mt-2">Upload PDFs, Word documents, or text files to get AI-powered summaries, key insights, and optional flashcard generation for better learning.</p>
+    </div>
+
+    <div class=" gap-6">
+      <!-- Upload Box -->
+       <div class="bg-[#1e293b] p-6 rounded-xl shadow-md">
+        <h3 class="text-lg font-semibold text-violet-400 mb-2">Upload Document</h3>
+        <p class="text-sm text-gray-400 mb-4">Supports PDF, Word (.docx), and text files up to 10MB</p>
+        <form enctype="multipart/form-data">
+          <label for="file-upload" class="border border-dashed border-gray-500 p-6 rounded-lg text-center cursor-pointer block">
+            <div class="text-4xl text-violet-500 mb-2">⬆️</div>
+            <p class="text-gray-300">Click to upload or drag & drop</p>
+            <p class="text-sm text-gray-400">PDF, Word, or Text files only</p>
+            <input id="file-upload" type="file" name="document" accept=".pdf,.doc,.docx,.txt" class="hidden" />
+          </label>
+          <button type="submit" class="mt-4 w-full bg-violet-500 text-white px-4 py-2 rounded-full hover:bg-violet-600 transition">Upload</button>
+        </form>
+      </div>
+    
+     
+    <!-- Recent Documents -->
+    <div class="mt-12 text-left">
+      <h3 class="text-xl font-semibold text-violet-400 mb-4">📄 Recent Documents</h3>
+      <div class="space-y-4">
+        <div class="bg-[#1e293b] p-4 rounded-lg shadow">
+          <h4 class="text-white font-semibold">Machine Learning Fundamentals.pdf</h4>
+          <p class="text-gray-400 text-sm">PDF · 2.4MB · 2 hours ago</p>
+          <p class="text-gray-300 mt-1">Comprehensive overview of ML algorithms, supervised and unsupervised learning...</p>
+          <button class="mt-2 inline-block bg-violet-500 px-4 py-2 text-white rounded-full hover:bg-violet-600 text-sm">View Summary</button>
+        </div>
+        <div class="bg-[#1e293b] p-4 rounded-lg shadow">
+          <h4 class="text-white font-semibold">React Best Practices.docx</h4>
+          <p class="text-gray-400 text-sm">Word · 1.1MB · 1 day ago</p>
+          <p class="text-gray-300 mt-1">Guidelines for writing clean, maintainable React code with modern standards...</p>
+          <button class="mt-2 inline-block bg-violet-500 px-4 py-2 text-white rounded-full hover:bg-violet-600 text-sm">View Summary</button>
+        </div>
+        <div class="bg-[#1e293b] p-4 rounded-lg shadow">
+          <h4 class="text-white font-semibold">Data Structures Notes.txt</h4>
+          <p class="text-gray-400 text-sm">Text · 856KB · 3 days ago</p>
+          <p class="text-gray-300 mt-1">Detailed notes on arrays, linked lists, trees, and graph algorithms...</p>
+          <button class="mt-2 inline-block bg-violet-500 px-4 py-2 text-white rounded-full hover:bg-violet-600 text-sm">View Summary</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1e293b] text-center text-sm text-gray-500 py-6 mt-12">
+    © 2025 StudyMate AI. All rights reserved.
+  </footer>
+
+</body>
+</html>
