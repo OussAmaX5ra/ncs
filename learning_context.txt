@@ -1,0 +1,31 @@
+# General Learning Context for StudyMate AI
+
+This document provides a foundational context for generating learning roadmaps. It covers popular domains like Web Development, Data Science, and Machine Learning.
+
+## Web Development
+
+### Frontend Development
+- **HTML**: The standard markup language for creating web pages.
+- **CSS**: A stylesheet language used to describe the presentation of a document written in HTML. Key concepts include Flexbox, Grid, and responsive design.
+- **JavaScript**: A programming language that enables interactive web pages. Essential topics are DOM manipulation, asynchronous programming (Promises, async/await), and ES6+ features.
+- **Frameworks**: Choose one major framework to master, such as React, Vue.js, or Angular. React is known for its component-based architecture and large ecosystem. Vue is praised for its gentle learning curve.
+
+### Backend Development
+- **Programming Language**: Select a language like Python (with Django or FastAPI), Node.js (with Express), Java (with Spring), or Ruby (with Rails).
+- **Databases**: Understand both SQL (e.g., PostgreSQL, MySQL) and NoSQL (e.g., MongoDB, Redis) databases.
+- **APIs**: Learn how to design and build RESTful APIs and understand concepts of GraphQL.
+- **Authentication**: Implement user authentication and authorization using methods like JWT (JSON Web Tokens) or OAuth.
+
+## Data Science
+
+- **Python Fundamentals**: Master Python, as it is the lingua franca of data science.
+- **Libraries**: Become proficient in libraries like NumPy for numerical operations, Pandas for data manipulation, and Matplotlib/Seaborn for data visualization.
+- **Statistics**: A strong foundation in statistics and probability is crucial.
+- **Data Cleaning**: Learn techniques for handling missing data, outliers, and inconsistencies.
+
+## Machine Learning
+
+- **Foundations**: Build on data science skills with a deeper understanding of algorithms.
+- **Supervised Learning**: Study algorithms like Linear Regression, Logistic Regression, Support Vector Machines (SVM), and Decision Trees.
+- **Unsupervised Learning**: Learn about K-Means Clustering, PCA (Principal Component Analysis).
+- **Deep Learning**: Explore neural networks using frameworks like TensorFlow or PyTorch. Key architectures include CNNs (for image data) and RNNs/LSTMs (for sequential data).
