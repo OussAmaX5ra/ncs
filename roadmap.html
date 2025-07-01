@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roadmap Inventor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+   <header class="bg-white  py-6  relative">
+  <div class="w-full relative flex items-center justify-center px-6">
+
+    <a href="dashboard.html"
+   class="bg-white hover:bg-gray-200 font-semibold absolute left-4 px-3 py-1 text-black border-gray-300 rounded text-sm flex items-center gap-2">
+  <!-- SVG Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+       stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+  </svg>
+  Dashboard
+</a>
+
+
+
+    <!-- Centered Title -->
+    <h1 class="text-2xl font-bold text-black text-center">
+      Roadmaps
+    </h1>
+
+    <!-- Right-side Controls -->
+    <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md font-semibold text-black">
+      <a href="settings.html">Settings</a>
+      <a href="profile.html" >Profile</a>
+      <a href="logout.html" class="bg-violet-500 hover:bg-violet-600 text-white px-3 py-1 rounded-full transition">
+        Log out
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+  <!-- Course Summary -->
+  <div class="bg-gray-100 border p-6 rounded-xl shadow-lg max-w-4xl mx-auto mt-4">
+   <!-- Title Row with Button -->
+<div class="flex justify-between items-center mt-4 mb-2">
+  <!-- Title -->
+  <h1 class="text-2xl font-bold text-gray-900">Python for Data Science</h1>
+
+  <!-- Button -->
+  <button id="openModalBtn"
+    class="bg-black text-white font-medium py-2 px-4 rounded hover:bg-gray-800 transition-all duration-300 shadow">
+     Customize Roadmap
+  </button>
+</div>
+
+   <div class="flex flex-wrap gap-2 text-sm mb-4">
+  <span class="bg-gray-100 px-3 py-1 rounded-full flex items-center gap-1">
+    <!-- Embedded SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="w-4 h-4">
+      <circle fill="#8A8AFF" stroke="#8A8AFF" stroke-width="2" cx="15" cy="15" r="12"/>
+      <polyline fill="none" stroke="#E3FAFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="15,7 15,15 21,15"/>
+    </svg>
+    12–16 weeks
+  </span>
+
+   <span class="bg-gray-100 px-3 py-1 rounded-full flex items-center gap-1">
+    <svg viewBox="0 -0.5 1025 1025" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="447.4" cy="576.6" r="431.4" fill="#fff"/>
+      <circle cx="447.4" cy="576.6" r="324.4" fill="#F86C6C"/>
+      <circle cx="447.4" cy="576.6" r="208.5" fill="#fff"/>
+      <circle cx="447.4" cy="576.6" r="101.5" fill="#F86C6C"/>
+    </svg>
+    Beginner to Intermediate
+  </span>
+   <span class="bg-gray-100 px-3 py-1 rounded-full flex items-center gap-1">
+    <svg width="16" height="16" viewBox="0 0 24 24" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM17.8 8.6C18.1314 8.15817 18.0418 7.53137 17.6 7.2C17.1582 6.86863 16.5314 6.95817 16.2 7.4L10.8918 14.4776L8.70711 12.2929C8.31658 11.9024 7.68342 11.9024 7.29289 12.2929C6.90237 12.6834 6.90237 13.3166 7.29289 13.7071L10.2929 16.7071C10.4979 16.9121 10.7817 17.018 11.0709 16.9975C11.3601 16.9769 11.6261 16.8319 11.8 16.6L17.8 8.6Z"
+        fill="#00ff4c" />
+    </svg>
+    1/6 Completed
+  </span>
+</div>
+
+
+    <!-- Progress Bar -->
+    <div class="mb-2">
+      <div class="text-sm text-right text-gray-500">17%</div>
+      <div class="w-full bg-gray-200 rounded-full h-2">
+        <div class="bg-violet-500 h-2 rounded-full" style="width: 17%;"></div>
+      </div>
+    </div>
+
+   
+   <!-- Customize Roadmap Button -->
+  
+
+<!-- Modal Overlay -->
+<div id="customizeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <!-- Modal Content -->
+  <div class="bg-white w-[90%] max-w-md rounded-xl p-6 shadow-lg relative">
+    <!-- Close Button -->
+    <button id="closeModalBtn"
+      class="absolute top-2 right-3 text-gray-600 hover:text-black text-2xl leading-none font-bold">&times;</button>
+
+    <!-- Modal Header -->
+    <h2 class="text-xl font-semibold mb-4 text-gray-800">Customize Your Roadmap</h2>
+
+    <!-- Modal Form -->
+    <form class="flex flex-col gap-4">
+      <label class="text-sm text-gray-700">
+        Select Skill Level
+        <select class="w-full mt-1 border border-gray-300 rounded p-2 text-sm">
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </label>
+
+      <label class="text-sm text-gray-700">
+        Learning Duration (weeks)
+        <input type="number" min="1" max="52" class="w-full mt-1 border border-gray-300 rounded p-2 text-sm"
+          placeholder="e.g. 12" />
+      </label>
+
+      <label class="text-sm text-gray-700">
+        Area of Focus
+        <input type="text" class="w-full mt-1 border border-gray-300 rounded p-2 text-sm"
+          placeholder="e.g. Machine Learning" />
+      </label>
+
+      <button type="submit"
+        class="bg-violet-500 text-white py-2 px-4 rounded font-semibold hover:bg-violet-600 transition">
+        Save Customization
+      </button>
+      
+    </form>
+  </div>
+</div>
+
+  <!-- Modules Section -->
+  <div class="max-w-4xl mx-auto mt-6">
+    <h3 class="text-xl font-semibold mb-4">Learning Modules</h3>
+
+    <!-- Module 1 -->
+    <div class="bg-white border-l-4 border-green-500 p-5 rounded-xl shadow mb-4">
+      <div class="flex items-center justify-between mb-1">
+        <h4 class="font-semibold text-lg text-green-600">✔ Module 1: Python Fundamentals</h4>
+        <button class="border px-3 py-1 rounded text-sm hover:bg-gray-100">Review</button>
+      </div>
+      <p class="text-sm text-gray-600">Variables, data types, control structures, functions</p>
+      <div class="mt-2 flex flex-wrap gap-2 text-sm text-white font-medium">
+        <span class="bg-green-500 px-2 py-1 rounded">COMPLETED</span>
+        <span class="text-gray-500">~20 hours</span>
+      </div>
+      <div class="mt-2 flex gap-2 text-xs text-violet-600">
+        <span class="bg-gray-100 px-2 py-1 rounded">Variables & Data Types</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Control Flow</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Functions</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Error Handling</span>
+      </div>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="bg-white border-l-4 border-blue-500 p-5 rounded-xl shadow mb-4">
+      <div class="flex items-center justify-between mb-1">
+        <h4 class="font-semibold text-lg text-blue-600">● Module 2: Data Structures & Libraries</h4>
+        <button class="border px-3 py-1 rounded text-sm hover:bg-gray-100">Continue</button>
+      </div>
+      <p class="text-sm text-gray-600">Lists, dictionaries, NumPy, Pandas basics</p>
+      <div class="mt-2 flex flex-wrap gap-2 text-sm text-white font-medium">
+        <span class="bg-blue-500 px-2 py-1 rounded">IN PROGRESS</span>
+        <span class="text-gray-500">~25 hours</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm mt-10 mb-4">
+    © 2025 StudyMate AI. All rights reserved.
+  </footer>
+  <!-- Script to handle modal open/close -->
+<script>
+  const modal = document.getElementById('customizeModal');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // Optional: close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>
