@@ -2,80 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>StudyMate Calendar</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .calendar-cell {
+      height: 100px;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900 font-sans min-h-screen p-6">
-  <div class="max-w-md mx-auto bg-white border border-violet-200 rounded-xl shadow-lg p-6">
-    <div class="flex justify-between items-center mb-4">
-      <button id="prev" class="text-violet-600 hover:text-violet-800 transition font-bold">&larr;</button>
-      <h2 id="monthYear" class="text-xl font-semibold text-violet-700"></h2>
-      <button id="next" class="text-violet-600 hover:text-violet-800 transition font-bold">&rarr;</button>
-    </div>
+<body class="bg-[#f9fafb] text-gray-800 font-sans">
 
-    <div class="grid grid-cols-7 text-center text-sm font-semibold text-gray-500 mb-2">
-      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+<header class="py-6 relative">
+  <div class="w-full relative flex items-center justify-center px-6">
+    <a href="dashboard.html"
+       class="hover:bg-gray-200 font-semibold absolute left-4 px-3 py-1 text-black border-gray-300 rounded text-sm flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+      </svg>
+      Dashboard
+    </a>
+    <h1 class="text-2xl font-bold text-black text-center">Calendar</h1>
+    <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md font-semibold text-black">
+      <a href="#features" class="font-semibold text-black hover:text-violet-300">Settings</a>
+        <a href="#solution" class="font-semibold text-black hover:text-violet-300">Profile</a>
+    <a href="login.html" class="bg-violet-500 text-white px-4 py-2 rounded-full hover:bg-violet-600 transition">Login</a>
     </div>
+  </div>
+</header>
 
-    <div id="calendarDays" class="grid grid-cols-7 text-center gap-y-2 text-gray-700">
-      <!-- JS will populate this -->
+<main class="max-w-6xl mx-auto py-10">
+  <div class="flex justify-between items-center mb-6">
+    <button onclick="changeMonth(-1)" class="text-violet-600 hover:text-violet-800 text-xl">←</button>
+    <h2 id="calendar-month" class="text-xl font-semibold">Month Year</h2>
+    <button onclick="changeMonth(1)" class="text-violet-600 hover:text-violet-800 text-xl">→</button>
+  </div>
+
+  <div class="grid grid-cols-7 gap-2 text-center text-sm font-medium text-gray-500 mb-2">
+    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+  </div>
+
+  <div id="calendar-grid" class="grid grid-cols-7 gap-2"></div>
+
+  <!-- Task Container -->
+  <div class="mt-10 p-6 bg-white rounded-xl shadow-md">
+    <h3 class="text-lg font-bold mb-4">Tasks for Selected Day</h3>
+    <ul id="task-list" class="space-y-3 text-md text-gray-700"></ul>
+    <div id="no-tasks" class="flex flex-col items-center justify-center text-center py-8 text-gray-400">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/>
+      </svg>
+      <p>No tasks for today.</p>
     </div>
   </div>
 
-  <script>
-    const monthYearEl = document.getElementById("monthYear");
-    const calendarDays = document.getElementById("calendarDays");
-    const prevBtn = document.getElementById("prev");
-    const nextBtn = document.getElementById("next");
+  <!-- Create Task Modal -->
+  <div id="taskModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-lg p-6 w-96">
+      <h3 class="text-lg font-semibold mb-4">Create a Task</h3>
+      <input type="date" id="task-date" class="w-full mb-3 p-2 border border-gray-300 rounded">
+      <input type="text" id="task-title" placeholder="Task Title" class="w-full mb-3 p-2 border border-gray-300 rounded">
+      <textarea id="task-desc" placeholder="Description" rows="3" class="w-full p-2 border border-gray-300 rounded mb-4"></textarea>
+      <div class="flex justify-end space-x-2">
+        <button onclick="closeModal()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Cancel</button>
+        <button onclick="addTask()" class="px-3 py-1 bg-violet-500 text-white rounded hover:bg-violet-600">Add</button>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 text-center">
+    <button onclick="openModal()" class="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded-full">Create Task</button>
+  </div>
+</main>
 
-    let date = new Date();
+<footer class="text-center text-sm text-gray-400 py-6 mt-8">
+  © 2025 StudyMate AI. All rights reserved.
+</footer>
 
-    function renderCalendar() {
-      const year = date.getFullYear();
-      const month = date.getMonth();
-      const firstDay = new Date(year, month, 1).getDay();
-      const lastDate = new Date(year, month + 1, 0).getDate();
-      const today = new Date();
+<script>
+  const calendarGrid = document.getElementById("calendar-grid");
+  const calendarMonth = document.getElementById("calendar-month");
+  let currentDate = new Date();
+  let selectedDate = new Date();
+  let tasks = JSON.parse(localStorage.getItem("calendarTasks") || '{}');
 
-      const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-      ];
-      monthYearEl.textContent = `${monthNames[month]} ${year}`;
+  function getKeyFromDate(date) {
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  }
 
-      calendarDays.innerHTML = "";
+  function renderCalendar(date) {
+    calendarGrid.innerHTML = "";
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const firstDay = new Date(year, month, 1).getDay();
+    const totalDays = new Date(year, month + 1, 0).getDate();
 
-      for (let i = 0; i < firstDay; i++) {
-        calendarDays.innerHTML += `<div></div>`;
-      }
+    calendarMonth.textContent = date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
-      for (let d = 1; d <= lastDate; d++) {
-        const isToday =
-          d === today.getDate() &&
-          month === today.getMonth() &&
-          year === today.getFullYear();
-
-        calendarDays.innerHTML += `
-          <div class="rounded-full w-10 h-10 flex items-center justify-center mx-auto
-            ${isToday ? "bg-violet-500 text-white font-bold shadow" : "hover:bg-violet-100"} 
-            cursor-pointer transition">
-            ${d}
-          </div>`;
-      }
+    for (let i = 0; i < firstDay; i++) {
+      calendarGrid.appendChild(document.createElement("div"));
     }
 
-    prevBtn.addEventListener("click", () => {
-      date.setMonth(date.getMonth() - 1);
-      renderCalendar();
-    });
+    for (let i = 1; i <= totalDays; i++) {
+      const dateObj = new Date(year, month, i);
+      const key = getKeyFromDate(dateObj);
+      const day = document.createElement("div");
+      day.className = "calendar-cell bg-white rounded-xl border border-gray-200 shadow-sm text-sm p-3 hover:bg-violet-100 cursor-pointer flex flex-col justify-between";
+      day.innerHTML = `<span class="font-semibold">${i}</span><ul class='text-xs text-violet-700 space-y-1 mt-1'>${(tasks[key] || []).map(t => `<li>• ${t.title}</li>`).join('')}</ul>`;
+      day.addEventListener("click", () => {
+        selectedDate = dateObj;
+        renderTasks();
+      });
+      calendarGrid.appendChild(day);
+    }
+  }
 
-    nextBtn.addEventListener("click", () => {
-      date.setMonth(date.getMonth() + 1);
-      renderCalendar();
-    });
+  function changeMonth(offset) {
+    currentDate.setMonth(currentDate.getMonth() + offset);
+    renderCalendar(currentDate);
+  }
 
-    renderCalendar();
-  </script>
+  function openModal() {
+    document.getElementById("taskModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("taskModal").classList.add("hidden");
+  }
+
+  function addTask() {
+    const date = document.getElementById("task-date").value;
+    const title = document.getElementById("task-title").value.trim();
+    const desc = document.getElementById("task-desc").value.trim();
+    if (!title || !date) return;
+
+    if (!tasks[date]) tasks[date] = [];
+    tasks[date].push({ title, desc });
+    localStorage.setItem("calendarTasks", JSON.stringify(tasks));
+
+    closeModal();
+    renderCalendar(currentDate);
+    selectedDate = new Date(date);
+    renderTasks();
+  }
+
+  function deleteTask(key, index) {
+    tasks[key].splice(index, 1);
+    if (tasks[key].length === 0) delete tasks[key];
+    localStorage.setItem("calendarTasks", JSON.stringify(tasks));
+    renderCalendar(currentDate);
+    renderTasks();
+  }
+
+  function renderTasks() {
+    const key = getKeyFromDate(selectedDate);
+    const list = document.getElementById("task-list");
+    const empty = document.getElementById("no-tasks");
+
+    const entries = tasks[key] || [];
+    if (entries.length === 0) {
+      list.innerHTML = "";
+      empty.style.display = "flex";
+    } else {
+      list.innerHTML = entries.map((task, index) => `
+        <li onclick="toggleDelete(this)" class="group flex justify-between items-start cursor-pointer hover: p-2 rounded-md">
+          <div>
+            <strong>${task.title}</strong><br/>
+            <span class='text-xs text-gray-500'>${task.desc || ''}</span>
+          </div>
+          <button onclick="deleteTask('${key}', ${index}); event.stopPropagation();" class="delete-btn text-red-500 hover:text-red-700 hidden group-hover:inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </li>`).join('');
+      empty.style.display = "none";
+    }
+  }
+
+  function toggleDelete(el) {
+    const btn = el.querySelector('.delete-btn');
+    if (btn) btn.classList.toggle('hidden');
+  }
+
+  renderCalendar(currentDate);
+  renderTasks();
+</script>
 </body>
 </html>
