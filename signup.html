@@ -9,19 +9,31 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center flex-col justify-center min-h-screen bg-white text-white">
-  <main class="flex-grow flex items-center justify-center">
- <a href="dashboard.html"
-   class="bg-white hover:bg-gray-200 text-md font-semibold absolute top-4 left-4 px-3 py-1 text-black border-gray-300 rounded  flex items-center gap-2">
-  <!-- SVG Arrow Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-       stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
-    <path stroke-linecap="round" stroke-linejoin="round"
-          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-  </svg>
- Go Home
-</a>
+<body class="flex items-center flex-col justify-center min-h-screen  bg-white text-white">
 
+ <!-- Top Bar with Home and Logo -->
+<div class="w-full flex items-center justify-between px-4 py-4">
+  <!-- Left: Go Home Button -->
+  <a href="dashboard.html"
+    class="flex items-center gap-2 text-black text-sm font-semibold hover:bg-gray-100 px-3 py-1 rounded transition">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+    </svg>
+    Go Home
+  </a>
+
+  <!-- Right: StudyMate Logo with SVG -->
+  <div class="flex items-center space-x-2">
+     <svg width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#1e40af;stroke-miterlimit:10;stroke-width:1.91px;}</style> </defs> <g id="brain"> <path class="cls-1" d="M12,4.36V20.59a1.92,1.92,0,0,1-1.91,1.91,1.93,1.93,0,0,1-1.91-1.91v0a2.45,2.45,0,0,1-.48,0,3.35,3.35,0,0,1-3.34-3.34,3.19,3.19,0,0,1,.08-.7A4.29,4.29,0,0,1,3.6,8.79,3.24,3.24,0,0,1,3.41,7.7,3.34,3.34,0,0,1,6.27,4.4v0a2.87,2.87,0,0,1,5.73,0Z"></path> <path class="cls-1" d="M6.75,11.05a3.35,3.35,0,0,1,0-6.69"></path> <path class="cls-1" d="M8.18,13.91h0A3.82,3.82,0,0,1,12,17.73h0"></path> <path class="cls-1" d="M9.14,7.23h0A2.86,2.86,0,0,0,12,4.36h0"></path> <path class="cls-1" d="M12,4.36V20.59a1.92,1.92,0,0,0,1.91,1.91,1.93,1.93,0,0,0,1.91-1.91v0a2.45,2.45,0,0,0,.48,0,3.35,3.35,0,0,0,3.34-3.34,3.19,3.19,0,0,0-.08-.7,4.29,4.29,0,0,0,.84-7.76,3.24,3.24,0,0,0,.19-1.09,3.34,3.34,0,0,0-2.86-3.3v0a2.87,2.87,0,0,0-5.73,0Z"></path> <path class="cls-1" d="M17.25,11.05a3.35,3.35,0,0,0,0-6.69"></path> <path class="cls-1" d="M15.82,13.91h0A3.82,3.82,0,0,0,12,17.73h0"></path> <path class="cls-1" d="M14.86,7.23h0A2.86,2.86,0,0,1,12,4.36h0"></path> </g> </g></svg>
+    <h1 class="text-2xl font-bold text-black">StudyMate</h1>
+  </div>
+</div>
+
+ 
+
+  
   <div class="form-box max-w-[320px] bg-gray-100 text-white border rounded-2xl shadow-lg overflow-hidden">
     <form class="form flex flex-col gap-4 text-center px-6 py-4 relative ">
       <!-- Title -->
@@ -38,16 +50,16 @@
            placeholder-gray-600 focus:outline-none focus:border-violet-400"/></div>
           <div class="form-container bg-gray-300 rounded-lg w-full overflow-hidden">
         <input type="email" placeholder="Email"
-          class="input w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-white
+          class="input w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-black
            placeholder-gray-600 focus:outline-none focus:border-violet-400"/></div>
           <div class="form-container bg-gray-300 rounded-lg w-full overflow-hidden">
         <input type="password" placeholder="Password"
-          class="input w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-white
+          class="input w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-black
            placeholder-gray-600 focus:outline-none focus:border-violet-400"/></div>
 
              <div class="form-container bg-gray-300 rounded-lg w-full overflow-hidden">
         <input type="password" placeholder="Confirm Password"
-          class="input w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-white
+          class="input w-full h-10 border-b border-gray-600 bg-transparent px-4 py-2 text-sm text-black
            placeholder-gray-600 focus:outline-none focus:border-violet-400"/>
         </div>
          
