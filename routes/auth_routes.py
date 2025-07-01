@@ -51,7 +51,7 @@ async def handle_signup(
     new_user = User(
         username=username,
         email=email,
-        hashed_password=get_password_hash(password)
+        password_hash=get_password_hash(password)
     )
     db.add(new_user)
     db.commit()
@@ -89,12 +89,12 @@ async def handle_login(
         log.warning(f"Login failed: Username '{username}' not found.")
         return templates.TemplateResponse("login.html", {"request": request, "error": f"Username '{username}' not found."})
 
-    if not verify_password(password, user.hashed_password):
+    if not verify_password(password, user.password_hash):
         log.warning(f"Login failed: Incorrect password for username '{username}'.")
         return templates.TemplateResponse("login.html", {"request": request, "error": "Incorrect password. Please try again."})
 
 
-    set_session(request, user.id)
+    set_session(request, "user_id", str(user.id))
     return RedirectResponse(url="/dashboard", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.get("/logout")

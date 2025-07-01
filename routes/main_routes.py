@@ -7,7 +7,7 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from database import get_db
 from middleware import login_required, redirect_if_logged_in
-from models import RoadMap, Step, StepState
+from models import Roadmap, Step, StepState, File as FileModel
 import os
 
 router = APIRouter()
@@ -30,10 +30,10 @@ async def dashboard(request: Request, db: Session = Depends(get_db)):
     """Render dashboard page"""
     user = request.state.user
     
-    roadmaps_count = db.query(RoadMap).filter(RoadMap.user_id == user.id).count()
+    roadmaps_count = db.query(Roadmap).filter(Roadmap.user_id == user.id).count()
     
-    completed_steps = db.query(Step).join(RoadMap).filter(
-        RoadMap.user_id == user.id,
+    completed_steps = db.query(Step).join(Roadmap).filter(
+        Roadmap.user_id == user.id,
         Step.state == StepState.completed
     ).count()
     
@@ -73,11 +73,14 @@ async def create_roadmap_submit(
     user = request.state.user
     
     # Create roadmap
-    roadmap = RoadMap(
-        topic=topic,
-        exp_lvl=experience_level,
-        specific_goals=specific_goals if specific_goals else None,
-        timeline=timeline,
+    roadmap_content = (
+        f"Experience Level: {experience_level}\n"
+        f"Specific Goals: {specific_goals or 'Not specified'}\n"
+        f"Timeline: {timeline}"
+    )
+    roadmap = Roadmap(
+        title=topic,
+        content=roadmap_content,
         user_id=user.id
     )
     
@@ -87,17 +90,18 @@ async def create_roadmap_submit(
     
     # Create sample steps (in a real app, you'd use AI to generate these)
     sample_steps = [
-        {"title": "Introduction and Basics", "content": f"Learn the fundamentals of {topic}"},
-        {"title": "Intermediate Concepts", "content": f"Dive deeper into {topic} concepts"},
-        {"title": "Advanced Topics", "content": f"Master advanced {topic} techniques"},
-        {"title": "Practice Projects", "content": f"Build real-world {topic} projects"},
-        {"title": "Review and Assessment", "content": f"Review and test your {topic} knowledge"}
+        {"name": "Introduction and Basics", "description": f"Learn the fundamentals of {topic}", "estimated_time": "1 week"},
+        {"name": "Intermediate Concepts", "description": f"Dive deeper into {topic} concepts", "estimated_time": "2 weeks"},
+        {"name": "Advanced Topics", "description": f"Master advanced {topic} techniques", "estimated_time": "2 weeks"},
+        {"name": "Practice Projects", "description": f"Build real-world {topic} projects", "estimated_time": "3 weeks"},
+        {"name": "Review and Assessment", "description": f"Review and test your {topic} knowledge", "estimated_time": "1 week"}
     ]
     
     for i, step_data in enumerate(sample_steps):
         step = Step(
-            title=step_data["title"],
-            content=step_data["content"],
+            name=step_data["name"],
+            description=step_data["description"],
+            estimated_time=step_data["estimated_time"],
             order=i + 1,
             roadmap_id=roadmap.id
         )
@@ -168,12 +172,9 @@ async def document_summarizer_submit(
         buffer.write(content)
     
     # Save file record to database
-    file_record = models.File(
+    file_record = FileModel(
         filename=document.filename,
-        original_filename=document.filename,
         file_path=file_path,
-        file_size=len(content),
-        content_type=document.content_type,
         user_id=user.id
     )
     
