@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document Summarizer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black">
+
+  <!-- Header -->
+  <header class="bg-white py-6  relative">
+  <div class="w-full relative flex items-center justify-center px-6">
+
+
+    <a href="dashboard.html"
+   class="bg-white hover:bg-gray-200 font-semibold absolute left-4 px-3 py-1 text-black border-gray-300 rounded text-sm flex items-center gap-2">
+  <!-- SVG Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+       stroke-width="3" stroke="#8b5cf6" class="w-8 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+  </svg>
+  Dashboard
+</a>
+    <!-- Centered Title -->
+    <h1 class="text-2xl font-bold text-black text-center">
+     Documwnt Summary
+    </h1>
+
+    <!-- Right-side Controls -->
+    <div class="absolute right-0 pr-10 flex items-center space-x-6 text-md">
+      <a href="settings.html" class="to-black hover:text-gray-700 font-semibold ">Settings</a>
+      <a href="profile.html" class="text-black hover:text-gray-700 font-semibold">Profile</a>
+      <a href="logout.html" class="bg-violet-500 hover:bg-violet-600 text-white px-3 py-1 rounded-full transition">
+        Log out
+      </a>
+    </div>
+
+  </div>
+</header>
+
+  <!-- Main Container -->
+ <!-- (same head and header as before) -->
+<!-- Start from <main> -->
+<main class="max-w-6xl  mx-auto px-6 py-10">
+
+  <!-- Document Info -->
+  <div class="bg-gray-100 border p-6 rounded-lg shadow flex justify-between items-center mb-8">
+    <div>
+      <h2 class="text-2xl font-bold text-black">Introduction to Machine Learning</h2>
+      <div class="mt-2 text-gray-600 text-sm space-x-3">
+        <span>24 pages</span> • 
+        <span>18 minutes read</span> • 
+        <span class="bg-gray-200 text-xs px-2 py-1 rounded">Academic Paper</span>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <button class="border px-4 py-2 rounded-md text-white bg-black ">Export Summary</button>
+      <button class="border px-4 py-2 rounded-md text-black bg-white">Process New Document</button>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Left Section: Key Points & Flashcards -->
+    <div class="md:col-span-2 space-y-6">
+      
+      <!-- Key Points Summary -->
+      <div class="bg-gray-100 border p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl text-black  flex items-center gap-2 mb-4">
+  <!-- New SVG Icon -->
+  <svg class="w-6 h-6 text-violet-500" viewBox="0 0 56 56" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 26.6875 12.6602 C 26.9687 12.6602 27.1094 12.4961 27.1797 12.2383 C 27.9062 8.3242 27.8594 8.2305 31.9375 7.4570 C 32.2187 7.4102 32.3828 7.2461 32.3828 6.9648 C 32.3828 6.6836 32.2187 6.5195 31.9375 6.4726 C 27.8828 5.6524 28.0000 5.5586 27.1797 1.6914 C 27.1094 1.4336 26.9687 1.2695 26.6875 1.2695 C 26.4062 1.2695 26.2656 1.4336 26.1953 1.6914 C 25.3750 5.5586 25.5156 5.6524 21.4375 6.4726 C 21.1797 6.5195 20.9922 6.6836 20.9922 6.9648 C 20.9922 7.2461 21.1797 7.4102 21.4375 7.4570 C 25.5156 8.2774 25.4687 8.3242 26.1953 12.2383 C 26.2656 12.4961 26.4062 12.6602 26.6875 12.6602 Z M 15.3438 28.7852 C 15.7891 28.7852 16.0938 28.5039 16.1406 28.0821 C 16.9844 21.8242 17.1953 21.8242 23.6641 20.5821 C 24.0860 20.5117 24.3906 20.2305 24.3906 19.7852 C 24.3906 19.3633 24.0860 19.0586 23.6641 18.9883 C 17.1953 18.0977 16.9609 17.8867 16.1406 11.5117 C 16.0938 11.0899 15.7891 10.7852 15.3438 10.7852 C 14.9219 10.7852 14.6172 11.0899 14.5703 11.5352 C 13.7969 17.8164 13.4687 17.7930 7.0469 18.9883 C 6.6250 19.0821 6.3203 19.3633 6.3203 19.7852 C 6.3203 20.2539 6.6250 20.5117 7.1406 20.5821 C 13.5156 21.6133 13.7969 21.7774 14.5703 28.0352 C 14.6172 28.5039 14.9219 28.7852 15.3438 28.7852 Z M 31.2344 54.7305 C 31.8438 54.7305 32.2891 54.2852 32.4062 53.6524 C 34.0703 40.8086 35.8750 38.8633 48.5781 37.4570 C 49.2344 37.3867 49.6797 36.8945 49.6797 36.2852 C 49.6797 35.6758 49.2344 35.2070 48.5781 35.1133 C 35.8750 33.7070 34.0703 31.7617 32.4062 18.9180 C 32.2891 18.2852 31.8438 17.8633 31.2344 17.8633 C 30.6250 17.8633 30.1797 18.2852 30.0860 18.9180 C 28.4219 31.7617 26.5938 33.7070 13.9140 35.1133 C 13.2344 35.2070 12.7891 35.6758 12.7891 36.2852 C 12.7891 36.8945 13.2344 37.3867 13.9140 37.4570 C 26.5703 39.1211 28.3281 40.8321 30.0860 53.6524 C 30.1797 54.2852 30.6250 54.7305 31.2344 54.7305 Z"/>
+  </svg>
+  Key Points Summary
+</h3>
+
+        <ol class="list-decimal list-inside text-gray-700 space-y-2">
+          <li>Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming</li>
+          <li>Three main types: supervised learning (with labeled data), unsupervised learning (finding patterns), and reinforcement learning (learning through rewards)</li>
+          <li>Common algorithms include linear regression, decision trees, neural networks, and clustering methods</li>
+          <li>Data preprocessing is crucial - includes cleaning, normalization, and feature selection</li>
+          <li>Model evaluation uses metrics like accuracy, precision, recall, and F1-score to measure performance</li>
+        </ol>
+      </div>
+
+      <!-- Replaced Key Concepts with Flashcards -->
+      <div class="bg-gray-100 border  p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold text-black mb-2 flex items-center gap-2">
+            <!-- New flashcard SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-violet-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 10.4V20"/>
+              <path d="M12 10.4C12 8.15979 12 7.03969 11.564 6.18404C11.1805 5.43139 10.5686 4.81947 9.81596 4.43597C8.96031 4 7.84021 4 5.6 4H4.6C4.03995 4 3.75992 4 3.54601 4.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601C3 4.75992 3 5.03995 3 5.6V16.4C3 16.9601 3 17.2401 3.10899 17.454C3.20487 17.6422 3.35785 17.7951 3.54601 17.891C3.75992 18 4.03995 18 4.6 18H7.54668C8.08687 18 8.35696 18 8.61814 18.0466C8.84995 18.0879 9.0761 18.1563 9.29191 18.2506C9.53504 18.3567 9.75977 18.5065 10.2092 18.8062L12 20"/>
+              <path d="M12 10.4C12 8.15979 12 7.03969 12.436 6.18404C12.8195 5.43139 13.4314 4.81947 14.184 4.43597C15.0397 4 16.1598 4 18.4 4H19.4C19.9601 4 20.2401 4 20.454 4.10899C20.6422 4.20487 20.7951 4.35785 20.891 4.54601C21 4.75992 21 5.03995 21 5.6V16.4C21 16.9601 21 17.2401 20.891 17.454C20.7951 17.6422 20.6422 17.7951 20.454 17.891C20.2401 18 19.9601 18 19.4 18H16.4533C15.9131 18 15.643 18 15.3819 18.0466C15.15 18.0879 14.9239 18.1563 14.7081 18.2506C14.465 18.3567 14.2402 18.5065 13.7908 18.8062L12 20"/>
+            </svg>
+            Study Flashcards
+          </h3>
+        <p class="text-sm text-gray-500 mb-4">3 cards generated</p>
+
+        <!-- Flashcards -->
+        <div class="bg-violet-100 backdrop-blur-md border border-violet-200  p-4 rounded mb-4">
+          <p class="text-violet-700 font-semibold">Question:</p>
+          <p class="text-gray-800 mb-2">What are the three main types of machine learning?</p>
+          <p class="text-violet-700 font-semibold">Answer:</p>
+          <p class="text-gray-800">Supervised, Unsupervised, and Reinforcement Learning</p>
+        </div>
+        <div class="bg-violet-100 backdrop-blur-md border border-violet-200  p-4 rounded mb-4">
+          <p class="text-violet-700 font-semibold">Question:</p>
+          <p class="text-gray-800 mb-2">What is overfitting?</p>
+          <p class="text-violet-700 font-semibold">Answer:</p>
+          <p class="text-gray-800">When a model memorizes training data but fails to generalize to new data</p>
+        </div>
+        <div class="bg-violet-100 backdrop-blur-md border border-violet-200  p-4 rounded mb-4">
+          <p class="text-violet-700 font-semibold">Question:</p>
+          <p class="text-gray-800 mb-2">What is data preprocessing?</p>
+          <p class="text-violet-700 font-semibold">Answer:</p>
+          <p class="text-gray-800">Steps like cleaning, normalization, and feature selection to prepare data</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar Flashcards -->
+<div class="space-y-6">
+  <!-- AI Chat Assistant (Replaces original chatbot) -->
+  <div class="bg-white border border-gray-200 rounded-lg shadow h-[400px] flex flex-col">
+    <!-- Header -->
+    <div class="bg-gradient-to-r bg-gray-100 text-white px-6 py-4 flex items-center shadow-lg rounded-t-lg">
+      <div class="flex items-center space-x-3">
+       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center -translate-y-1 -translate-x-2">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#1e40af" class="size-7">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M4.26 10.147a60.438 60.438 0 0 0-.491  6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+  </svg>
+</div>
+
+        <div>
+          <h3 class="font-semibold text-black text-lg">AI Chat Assistant</h3>
+          <p class="text-black text-sm">Always here to help</p>
+        </div>
+      </div>
+      <div class="ml-auto">
+        <div class="w-3 h-3 bg-violet-600 rounded-full animate-pulse"></div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="chat-container" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-100">
+      <div class="flex items-start space-x-3">
+        <div class="w-8 h-8  flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+</svg>
+        </div>
+        <div class="bg-white border border-emerald-100 text-gray-800 px-4 py-3 rounded-2xl rounded-tl-md shadow-sm max-w-[85%]">
+          <p class="text-sm">Hello!  I'm your AI assistant. How can I help you today?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="border-t border-gray-100 bg-gray-100 p-4 rounded-b-lg">
+      <div class="flex items-end  space-x-3">
+        <textarea id="user-input" placeholder="Ask about the document..."
+          class="flex-1 resize-none bg-white border border-gray-300 rounded-2xl px-4 py-3 text-sm text-gray-800 focus:ring-2 focus:ring-violet-300 focus:outline-none"
+          rows="1" style="min-height: 44px;"></textarea>
+        <button onclick="sendMessage()" class="bg-violet-500 hover:bg-violet-600 text-white p-3 rounded-2xl shadow-md transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="2" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+          </svg>
+        </button>
+      </div>
+      <p class="text-xs text-gray-500 mt-2 px-1">Press Enter to send, Shift+Enter for new line</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</main>
+
+
+  <!-- Optional: JS for actions -->
+  <script>
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => alert('This is a placeholder button.'));
+    });
+    async function sendMessage() {
+  const input = document.getElementById('user-input');
+  const message = input.value.trim();
+  if (!message) return;
+
+  const chat = document.getElementById('chat-container');
+
+  // Append user's message
+ 
+chat.innerHTML += `
+  <div class="mb-4 flex justify-end items-start space-x-3 rtl:space-x-reverse">
+    <div class="bg-white border border-gray-100 px-4 py-2 rounded-2xl rounded-br-none shadow-sm max-w-[85%] text-gray-800">
+      <p class="text-sm">${message}</p>
+    </div>
+    <div class="w-8 h-8 flex-shrink-0 bg-white border border-gray-100 rounded-full flex items-center justify-center overflow-hidden p-1">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+        <path d="M12.12 12.78C12.05 12.77 11.96 12.77 11.88 12.78C10.12 12.72 8.71997 11.28 8.71997 9.50998C8.71997 7.69998 10.18 6.22998 12 6.22998C13.81 6.22998 15.28 7.69998 15.28 9.50998C15.27 11.28 13.88 12.72 12.12 12.78Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.74 19.3801C16.96 21.0101 14.6 22.0001 12 22.0001C9.40001 22.0001 7.04001 21.0101 5.26001 19.3801C5.36001 18.4401 5.96001 17.5201 7.03001 16.8001C9.77001 14.9801 14.25 14.9801 16.97 16.8001C18.04 17.5201 18.64 18.4401 18.74 19.3801Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+`;
+
+
+
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
+
+  // Send question to backend
+  const response = await fetch('/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: message })
+  });
+
+  const data = await response.json();
+
+  // Append AI's answer
+  chat.innerHTML += `
+    <div class="mb-4">
+      <p class="text-sm font-semibold text-green-600">AI:</p>
+      <p class="text-gray-800">${data.answer}</p>
+    </div>
+  `;
+  chat.scrollTop = chat.scrollHeight;
+}
+  </script>
+</body>
+</html>
