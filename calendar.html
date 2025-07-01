@@ -9,12 +9,12 @@
 <body class="bg-white text-gray-900 font-sans min-h-screen p-6">
   <div class="max-w-md mx-auto bg-white border border-violet-200 rounded-xl shadow-lg p-6">
     <div class="flex justify-between items-center mb-4">
-      <button id="prev" class="text-violet-600 hover:text-violet-800">&larr;</button>
+      <button id="prev" class="text-violet-600 hover:text-violet-800 transition font-bold">&larr;</button>
       <h2 id="monthYear" class="text-xl font-semibold text-violet-700"></h2>
-      <button id="next" class="text-violet-600 hover:text-violet-800">&rarr;</button>
+      <button id="next" class="text-violet-600 hover:text-violet-800 transition font-bold">&rarr;</button>
     </div>
 
-    <div class="grid grid-cols-7 text-center text-sm font-medium text-gray-500 mb-2">
+    <div class="grid grid-cols-7 text-center text-sm font-semibold text-gray-500 mb-2">
       <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
     </div>
 
@@ -58,7 +58,7 @@
 
         calendarDays.innerHTML += `
           <div class="rounded-full w-10 h-10 flex items-center justify-center mx-auto
-            ${isToday ? "bg-violet-500 text-white font-semibold" : "hover:bg-violet-100"} 
+            ${isToday ? "bg-violet-500 text-white font-bold shadow" : "hover:bg-violet-100"} 
             cursor-pointer transition">
             ${d}
           </div>`;
